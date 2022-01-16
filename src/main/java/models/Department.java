@@ -48,10 +48,9 @@ public class Department {
         if (!(o instanceof Department)) return false;
         Department that = (Department) o;
         return id == that.id &&
-                Objects.equals(name, that.name) &&
-               allEmployees == that.allEmployees &&
-                Objects.equals(description, that.description);
-
+                allEmployees == that.allEmployees &&
+                Objects.equals(getName(), that.getName()) &&
+                Objects.equals(getDescription(), that.getDescription());
     }
     @Override
     public int hashCode() {

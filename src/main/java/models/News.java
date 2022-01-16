@@ -3,50 +3,27 @@ package models;
 import java.util.Objects;
 
 public class News {
-    private String author;
-    private String description;
-    private String title;
-    private String type;
-    private int id;
+    private String post;
+    private  int id;
 
-    public News(String description,String title) {
-        this.description = description;
-        this.title = title;
-        this.type = "General";
+    public News(String post) {
+        this.post = post;
+
     }
 
 
-    public String getAuthor() {
-        return author;
+    public String getPost() {
+        return post;
     }
-    public String getDescription() {
-        return description;
-    }
-    public String getTitle() {
-        return title;
-    }
-    public String getType() {
-        return type;
-    }
+
     public int getId() {
         return id;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setPost(String post) {
+        this.post = post;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public void setId(int id) {
         this.id = id;
@@ -57,13 +34,11 @@ public class News {
         if (!(o instanceof News)) return false;
         News news = (News) o;
         return getId() == news.getId() &&
-                Objects.equals(getTitle(), news.getTitle()) &&
-                Objects.equals(getDescription(), news.getDescription()) &&
-                Objects.equals(getType(), news.getType());
+                Objects.equals(getPost(), news.getPost());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, description, type, id);
+        return Objects.hash(post, id);
     }
 }
