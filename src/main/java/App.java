@@ -82,10 +82,10 @@ public class App {
             int newsId = Integer.parseInt(req.params("id"));
             News newsToFind = newsDao.findById(newsId);
             if (newsToFind == null){
-                throw new ApiException(404, String.format("No foodtype with the id: \"%s\" exists", req.params("id")));
+                throw new ApiException(404, String.format("No news with the id: \"%s\" exists", req.params("id")));
             }
             else if (newsDao.getAllDepartmentsForANews(newsId).size()==0){
-                return "{\"message\":\"I'm sorry, but no restaurants are listed for this foodtype.\"}";
+                return "{\"message\":\"I'm sorry, but no department are listed for this news.\"}";
             }
             else {
                 return gson.toJson(newsDao.getAllDepartmentsForANews(newsId));
