@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="models.NewsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-16T10:11:02" hostname="fiona-ThinkPad-T460s" time="0.003">
-  <properties/>
-  <testcase name="news_titleAndDescriptionAreTheSame_true" classname="models.NewsTest" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
