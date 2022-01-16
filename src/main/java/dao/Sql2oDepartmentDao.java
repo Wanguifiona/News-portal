@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Sql2oDepartmentDao implements DepartmentDao{ //don't forget to shake hands with your interface!
+public class Sql2oDepartmentDao implements DepartmentDao { //don't forget to shake hands with your interface!
 
     private final Sql2o sql2o;
 
@@ -90,6 +90,18 @@ public class Sql2oDepartmentDao implements DepartmentDao{ //don't forget to shak
             return con.createQuery("SELECT * FROM departments WHERE id = :id")
                     .addParameter("id", id)
                     .executeAndFetchFirst(Department.class);
+        }
+    }
+    @Override
+    public void addDepartmentToNews(Department department, News news){
+        String sql = "INSERT INTO departments_news (departmentid, newsid) VALUES (:departmentid, :newsid)";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("departmentId", department.getId())
+                    .addParameter("newsId", news.getId())
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
         }
     }
 
