@@ -1,5 +1,3 @@
-
-
 package dao;
 
 import models.Department;
@@ -16,9 +14,9 @@ public class Sql2oNewsDaoTest {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        departmentDao = new Sql2oDepartmentDao(DB.sql2o);
-        newsDao = new Sql2oNewsDao(DB.sql2o);
-        conn = DB.sql2o.open();
+        departmentDao = new Sql2oDepartmentDao(DatabaseRule.sql2o);
+        newsDao = new Sql2oNewsDao(DatabaseRule.sql2o);
+        conn = DatabaseRule.sql2o.open();
     }
 
     @After
@@ -33,11 +31,7 @@ public class Sql2oNewsDaoTest {
         conn.close();
         System.out.println("connection closed");
     }
-//    @Test
-//    public void addingNewsSetsId() throws Exception {
-//        News news = setupNews();
-//        assertEquals(1, news.getId());
-//    }
+
 
     @Test
     public void getAll() throws Exception {
@@ -82,14 +76,14 @@ public class Sql2oNewsDaoTest {
 
     //helpers
     public News setupNews(){
-        News news =  new News("Volcanic eruption");
+        News news =  new News("Climate spike");
         newsDao.add(news);
         return news;
     }
 
 
     public Department setupDepartment(){
-        Department department =  new Department("finance",20,"budgeting work");
+        Department department =  new Department("IT", "build technology", 10);
         departmentDao.add(department);
         return department;
     }

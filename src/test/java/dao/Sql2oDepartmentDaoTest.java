@@ -1,56 +1,48 @@
 package dao;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.sql2o.Connection;
-import org.sql2o.Sql2o;
 import models.Department;
 import models.News;
 import models.User;
-
+import org.junit.*;
+import org.sql2o.Connection;
+import org.sql2o.Sql2o;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class Sql2oDepartmentDaoTest {
-    private Sql2oDepartmentDao departmentDao;
-    private Sql2oNewsDao newsDao;
-    private Connection conn;
+    private static Sql2oDepartmentDao departmentDao;
+    private static Sql2oNewsDao newsDao;
+    private static Connection conn;
 
-
-    @Before
-    public void setUp() throws Exception {
-//        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-//        Sql2o sql2o = new Sql2o(connectionString, "", "");
-        departmentDao = new Sql2oDepartmentDao(DB.sql2o);
-        newsDao = new Sql2oNewsDao(DB.sql2o);
-        conn = DB.sql2o.open();
+    @BeforeClass
+    public static void setUp() throws Exception {
+        departmentDao = new Sql2oDepartmentDao(DatabaseRule.sql2o);
+        newsDao = new Sql2oNewsDao(DatabaseRule.sql2o);
+        conn = DatabaseRule.sql2o.open();
     }
+
     @After
     public void tearDown() throws Exception {
-        conn.close();
+        System.out.println("clearing database");
+        departmentDao.clearAll();
+        newsDao.clearAll();
     }
-//    @After
-//    public void tearDown() throws Exception {
-//        System.out.println("clearing database");
-//        departmentDao.clearAll();
-//        newsDao.clearAll();
-//    }
-//
-//    @AfterClass
-//    public static void shutDown() throws Exception{
-//        conn.close();
-//        System.out.println("connection closed");
-//    }
-@Test
-public void getAll() throws Exception {
-    Department department = setupDepartment();
-    Department department1 = setupDepartment();
-    assertEquals(2, departmentDao.getAll().size());
-}
+
+    @AfterClass
+    public static void shutDown() throws Exception{
+        conn.close();
+        System.out.println("connection closed");
+    }
+
+    @Test
+    public void getAll() throws Exception {
+        Department department = setupDepartment();
+        Department department1 = setupDepartment();
+        assertEquals(2, departmentDao.getAll().size());
+    }
 
     @Test
     public void deleteById() throws Exception {
@@ -70,10 +62,10 @@ public void getAll() throws Exception {
     }
     @Test
     public void getAllNewsForADepartmentReturnsNewsCorrectly() throws Exception {
-        News news  = new News("The eruption");
+        News news  = new News("The Eruption");
         newsDao.add(news);
 
-        News otherNews  = new News("Nairobi rush hour");
+        News otherNews  = new News("Climate Spike");
         newsDao.add(otherNews);
 
         Department department = setupDepartment();
@@ -96,7 +88,7 @@ public void getAll() throws Exception {
 
     //helpers
     public Department setupDepartment(){
-        Department department =  new Department("HR",10,"Managing employees productivity");
+        Department department =  new Department("IT","building technology",10);
         departmentDao.add(department);
         return department;
     }

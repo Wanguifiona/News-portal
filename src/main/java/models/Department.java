@@ -4,56 +4,61 @@ import java.util.Objects;
 
 public class Department {
     private String name;
-    private int allEmployees;
-    private String description;
-    private int id;
+    private  String description;
+    private int numberOfEmployees;
+    private  int id;
 
-
-    public Department(String name, int allEmployees, String description){
-        this. name = name;
-        this.allEmployees =allEmployees;
+    public Department(String name, String description, int numberOfEmployees){
+        this.name = name;
         this.description = description;
+        this.numberOfEmployees = numberOfEmployees;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
-    public int getAllEmployees(){
-        return allEmployees;
-    }
-    public String getDescription(){
+
+    public String getDescription() {
         return description;
     }
-    public int getId(){
+
+    public int getNumberOfEmployees() {
+        return numberOfEmployees;
+    }
+
+    public int getId() {
         return id;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
-    }
-    public void setAllEmployees(int allEmployees){
-        this.allEmployees = allEmployees;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
+    public void setNumberOfEmployees(int numberOfEmployees) {
+        this.numberOfEmployees = numberOfEmployees;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Department)) return false;
         Department that = (Department) o;
         return id == that.id &&
-                allEmployees == that.allEmployees &&
-                Objects.equals(getName(), that.getName()) &&
-                Objects.equals(getDescription(), that.getDescription());
+                Objects.equals(name, that.name) &&
+                Objects.equals(description, that.description) &&
+                numberOfEmployees == that.numberOfEmployees;
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, allEmployees, description, id);
+        return Objects.hash(name, description, numberOfEmployees, id);
     }
+
 }

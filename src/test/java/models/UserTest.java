@@ -1,4 +1,3 @@
-
 package models;
 
 import org.junit.After;
@@ -19,53 +18,53 @@ public class UserTest {
 
     @Test
     public void getNameReturnsCorrectName() {
-        User user = new User ("George","Intern","Junior developer",701);
-        assertEquals("George", user.getName());
+        User user = setupUser();
+        assertEquals("larry", user.getName());
     }
 
     @Test
     public void getPositionReturnsCorrectPosition() {
-        User user = new User ("George","Intern","Junior developer",701);
-        assertEquals("Intern", user.getPosition());
+        User user = setupUser();
+        assertEquals("manager", user.getPosition());
     }
 
     @Test
     public void getRoleReturnsCorrectRole() {
-        User user = new User ("George","Intern","Junior developer",701);
-        assertEquals("Junior developer", user.getRole());
+        User user = setupUser();
+        assertEquals("news anchor", user.getRole());
     }
 
     @Test
     public void getDepartmentReturnsCorrectDepartment() {
-        User user = new User ("George","Intern","Junior developer",701);
-        assertEquals(701, user.getDepartmentId());
+        User user = setupUser();
+        assertEquals(1, user.getDepartmentId());
     }
 
     @Test
     public void setNameSetsCorrectName() throws Exception {
-        User user = new User ("George","Intern","Junior developer",701);
-        user.setName("Saul");
-        assertNotEquals("George",user.getName());
+        User user = setupUser();
+        user.setName("madowo");
+        assertNotEquals("larry",user.getName());
     }
 
 
     @Test
     public void setPositionSetsCorrectPosition() throws Exception {
-        User user = new User ("George","Intern","Junior developer",701);
-        user.setPosition("Manager");
-        assertNotEquals("Intern",user.getPosition());
+        User user = setupUser();
+        user.setPosition("junior");
+        assertNotEquals("manager",user.getPosition());
     }
 
     @Test
     public void setRoleSetsCorrectRole() throws Exception {
-        User user = new User ("George","Intern","Junior developer",701);
-        user.setRole("HR");
-        assertNotEquals("Junior developer",user.getRole());
+        User user = setupUser();
+        user.setRole("developer");
+        assertNotEquals("news anchor",user.getRole());
     }
 
     //helper
     public User setupUser(){
-        return  new User("George","Intern","Junior developer",701);
+        return  new User("larry","manager","news anchor",1);
     }
 
 }

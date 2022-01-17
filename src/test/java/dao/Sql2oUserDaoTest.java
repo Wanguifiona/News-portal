@@ -15,9 +15,9 @@ public class Sql2oUserDaoTest {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        departmentDao = new Sql2oDepartmentDao(DB.sql2o);
-        userDao = new Sql2oUserDao(DB.sql2o);
-        conn = DB.sql2o.open();
+        departmentDao = new Sql2oDepartmentDao(DatabaseRule.sql2o);
+        userDao = new Sql2oUserDao(DatabaseRule.sql2o);
+        conn = DatabaseRule.sql2o.open();
     }
 
     @After
@@ -33,11 +33,6 @@ public class Sql2oUserDaoTest {
         System.out.println("connection closed");
     }
 
-//    @Test
-//    public void addingUserSetsId() throws Exception {
-//        User user = setupUser();
-//        assertEquals(1, user.getId());
-//    }
 
     @Test
     public void getAll() throws Exception {
@@ -76,19 +71,19 @@ public class Sql2oUserDaoTest {
 
     //helpers
     public User setupUser(){
-        User user = new User("Mike","intern","intern",100);
+        User user = new User("Mike","Intern","Junior writer",100);
         userDao.add(user);
         return  user;
     }
 
     public User  setupUserForADepartment(Department department){
-        User user = new User("Mike","intern","intern",department.getId());
+        User user = new User("Mike","Intern","Junior writer",department.getId());
         userDao.add(user);
         return user;
     }
 
     public Department setupDepartment(){
-        Department department =  new Department("technology",5,"technology");
+        Department department =  new Department("IT", "build software", 10);
         departmentDao.add(department);
         return department;
     }
