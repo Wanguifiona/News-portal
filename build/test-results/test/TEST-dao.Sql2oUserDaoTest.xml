@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dao.Sql2oUserDaoTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-01-17T12:46:54" hostname="fiona-ThinkPad-T460s" time="0.613">
+<testsuite name="dao.Sql2oUserDaoTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-01-17T12:54:23" hostname="fiona-ThinkPad-T460s" time="0.872">
   <properties/>
-  <testcase name="getAll" classname="dao.Sql2oUserDaoTest" time="0.168"/>
-  <testcase name="getAllUsersForADepartment" classname="dao.Sql2oUserDaoTest" time="0.161"/>
-  <testcase name="clearAll" classname="dao.Sql2oUserDaoTest" time="0.119"/>
-  <testcase name="deleteById" classname="dao.Sql2oUserDaoTest" time="0.164"/>
+  <testcase name="getAll" classname="dao.Sql2oUserDaoTest" time="0.283"/>
+  <testcase name="getAllUsersForADepartment" classname="dao.Sql2oUserDaoTest" time="0.234"/>
+  <testcase name="clearAll" classname="dao.Sql2oUserDaoTest" time="0.154"/>
+  <testcase name="deleteById" classname="dao.Sql2oUserDaoTest" time="0.194"/>
   <system-out><![CDATA[clearing database
 clearing database
 clearing database

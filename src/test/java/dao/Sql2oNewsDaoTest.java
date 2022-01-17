@@ -14,9 +14,9 @@ public class Sql2oNewsDaoTest {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        departmentDao = new Sql2oDepartmentDao(DatabaseRule.sql2o);
-        newsDao = new Sql2oNewsDao(DatabaseRule.sql2o);
-        conn = DatabaseRule.sql2o.open();
+        departmentDao = new Sql2oDepartmentDao(DB.sql2o);
+        newsDao = new Sql2oNewsDao(DB.sql2o);
+        conn = DB.sql2o.open();
     }
 
     @After

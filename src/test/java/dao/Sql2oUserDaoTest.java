@@ -15,9 +15,9 @@ public class Sql2oUserDaoTest {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        departmentDao = new Sql2oDepartmentDao(DatabaseRule.sql2o);
-        userDao = new Sql2oUserDao(DatabaseRule.sql2o);
-        conn = DatabaseRule.sql2o.open();
+        departmentDao = new Sql2oDepartmentDao(DB.sql2o);
+        userDao = new Sql2oUserDao(DB.sql2o);
+        conn = DB.sql2o.open();
     }
 
     @After
