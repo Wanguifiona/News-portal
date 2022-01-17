@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="models.NewsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-01-17T15:56:09" hostname="fiona-ThinkPad-T460s" time="0.001">
-  <properties/>
-  <testcase name="setPostSetsCorrectPost" classname="models.NewsTest" time="0.0"/>
-  <testcase name="getPostReturnsCorrectPost" classname="models.NewsTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
