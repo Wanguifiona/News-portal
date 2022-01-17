@@ -31,11 +31,11 @@ fiona.maina@student.moringaschool.com
 
    * Clone or download the Repository
    
-  * cd into directory then run `cd News-portal`
+   * cd into directory then run `cd News-portal`
     
    * Rebuild the Project Using Intellij IDEA or ...
    
-   *Open terminal command line then navigate to the root folder of the application.
+   * Open terminal command line then navigate to the root folder of the application.
    
    * Run `gradle run` command.
    
