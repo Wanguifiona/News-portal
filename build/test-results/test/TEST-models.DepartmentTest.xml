@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="models.DepartmentTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-01-17T12:54:22" hostname="fiona-ThinkPad-T460s" time="0.006">
+<testsuite name="models.DepartmentTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-01-17T15:56:09" hostname="fiona-ThinkPad-T460s" time="0.008">
   <properties/>
-  <testcase name="getDescriptionReturnsCorrectDescription" classname="models.DepartmentTest" time="0.002"/>
+  <testcase name="getDescriptionReturnsCorrectDescription" classname="models.DepartmentTest" time="0.003"/>
   <testcase name="getNameReturnsCorrectName" classname="models.DepartmentTest" time="0.0"/>
   <testcase name="getNumberOfEmployeesReturnsCorrectNumberOfEmployees" classname="models.DepartmentTest" time="0.0"/>
-  <testcase name="setNameSetsCorrectName" classname="models.DepartmentTest" time="0.001"/>
-  <testcase name="setDescriptionSetsCorrectDescription" classname="models.DepartmentTest" time="0.0"/>
-  <testcase name="setNumberOfEmployeesSetsCorrectNumberOfEmployees" classname="models.DepartmentTest" time="0.0"/>
+  <testcase name="setNameSetsCorrectName" classname="models.DepartmentTest" time="0.0"/>
+  <testcase name="setDescriptionSetsCorrectDescription" classname="models.DepartmentTest" time="0.001"/>
+  <testcase name="setNumberOfEmployeesSetsCorrectNumberOfEmployees" classname="models.DepartmentTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
