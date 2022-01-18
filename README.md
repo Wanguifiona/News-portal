@@ -1,4 +1,4 @@
-#NEWS-PORTAL
+# NEWS-PORTAL
 
 An app that is a rest REST API for querying and retrieving scoped news and information.
 
